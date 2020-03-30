@@ -27,6 +27,19 @@ qmake options:
 DEFINES+=NO_NEW_VERSION_CHECK
   
   
+### Arch Linux
+
+For Arch Linux, edit `/etc/pacman.conf` and add the following (the order of the repositories is important in pacman.conf, because pacman always downloads the first package it finds):
+
+[home_llamaret_Arch]
+SigLevel = Never
+Server = https://download.opensuse.org/repositories/home:/llamaret/Arch/$arch
+
+Then run the following as root
+
+pacman -Syu
+pacman -S home_llamaret_Arch/mystiq  
+  
 Hint:
 To check that all external programs are installed,
 please run mystiq on the console and control
